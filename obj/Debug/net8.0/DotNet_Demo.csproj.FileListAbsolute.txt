@@ -399,3 +399,4 @@
 /Users/omarosking/Documents/GitHub/DotNet_Demo/obj/Debug/net8.0/DotNet_Demo.pdb
 /Users/omarosking/Documents/GitHub/DotNet_Demo/obj/Debug/net8.0/DotNet_Demo.genruntimeconfig.cache
 /Users/omarosking/Documents/GitHub/DotNet_Demo/obj/Debug/net8.0/ref/DotNet_Demo.dll
+/Users/omarosking/Documents/GitHub/DotNet_Demo/obj/Debug/net8.0/DotNet_Demo.sourcelink.json
