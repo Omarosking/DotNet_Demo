@@ -29,9 +29,19 @@ public class Formpage
         mobile = _page.Locator("#userNumber");
         hobbies = _page.Locator("//label[normalize-space()='Sports']");
         submit_btn = _page.Locator("#submit");
+        subjects = _page.Locator("(//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3'])[1]");
 
     }
-
+    
+    public async Task NavigateToPageAsync()
+    {
+        await _page.GotoAsync("https://demoqa.com/");
+    }
+    
+    public async Task SetViewportSize()
+    {
+        await _page.SetViewportSizeAsync( width: 1920, height: 1080 );
+    }
     public async Task ClickForms() => await forms.ClickAsync();
     public async Task ClickPracticeForm() => await practice_form.ClickAsync();
     public async Task TextFname() => await fname.FillAsync("test");
@@ -40,7 +50,9 @@ public class Formpage
     public async Task CheckGender() => await gender.CheckAsync();
     public async Task TextMobile() => await mobile.FillAsync("8095555555");
     public async Task SelectHobbie() => await hobbies.ClickAsync();
+    public async Task SelectSubject() => await subjects.TypeAsync("English");
     public async Task ClickSubmit() => await submit_btn.ClickAsync();
+    
 
 }
 

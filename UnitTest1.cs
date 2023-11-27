@@ -28,10 +28,12 @@ public class Tests
         var page = await browser.NewPageAsync();
 
     
-        await page.GotoAsync("https://demoqa.com/");
-        await page.SetViewportSizeAsync( width: 1920, height: 1080 );
+       // await page.GotoAsync("https://demoqa.com/");
+       // await page.SetViewportSizeAsync( width: 1920, height: 1080 );
 
         Formpage formpage = new Formpage(page);
+        await formpage.NavigateToPageAsync();
+        await formpage.SetViewportSize();
         await formpage.ClickForms();
         await formpage.ClickPracticeForm();
         await formpage.TextFname();
@@ -43,7 +45,8 @@ public class Tests
         await formpage.ClickSubmit();
 
     }
-
+    
+    [Test]
      public async Task TestPOM2()
     {
         //Playwright
@@ -52,18 +55,20 @@ public class Tests
         //Browser 
         await using var browser = await playwright.Chromium.LaunchAsync(new BrowserTypeLaunchOptions
         {
-            Headless  = true
+            Headless  = false
            
         });
        
         //Page 
         var page = await browser.NewPageAsync();
 
-    
-        await page.GotoAsync("https://demoqa.com/");
-        await page.SetViewportSizeAsync( width: 1920, height: 1080 );
+        
+        //await page.GotoAsync("https://demoqa.com/");
+        //await page.SetViewportSizeAsync( width: 1920, height: 1080 );
 
         Formpage formpage = new Formpage(page);
+        await formpage.NavigateToPageAsync();
+        await formpage.SetViewportSize();
         await formpage.ClickForms();
         await formpage.ClickPracticeForm();
         await formpage.TextFname();
@@ -72,7 +77,9 @@ public class Tests
         await formpage.CheckGender();
         await formpage.TextMobile();
         await formpage.SelectHobbie();
+        await formpage.SelectSubject();
         await formpage.ClickSubmit();
+        
 
     }
 } 
